@@ -7,3 +7,24 @@
 // Third: Make it in-place and stable.
 
 // Fourth: Can you make this faster by eliminating any second inner loop?
+
+function removeDuplicates(arr) {
+    const dict = {};
+    let counter = 0;
+    for(let i = 0; i < arr.length; i++) {
+        if(dict[arr[i]] == undefined) {
+            dict[arr[i]] = true;
+            arr[i - counter] = arr[i];
+        } else {
+            counter++;
+        }
+    }
+    while(counter > 0) {
+        arr.pop();
+        counter--;
+    }
+}
+
+const testArr = [1,2,1,3,4,2];
+removeDuplicates(testArr);
+console.log(testArr);
