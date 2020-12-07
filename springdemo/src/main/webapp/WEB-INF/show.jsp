@@ -11,5 +11,6 @@
 	<h1>On show page!</h1>
 	<p><c:out value="${2+2}"/></p>
 	<h2>Name: <c:out value="${userName}"/> From: <c:out value="${useLocation}"/></h2>
+
 </body>
 </html>

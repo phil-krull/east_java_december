@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeController {
 	@RequestMapping("")
 	public String index() {
-		return "Hello World!";
+		return "index.jsp";
 	}
 	
 	@RequestMapping("/name")
