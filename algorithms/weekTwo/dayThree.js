@@ -60,7 +60,7 @@ myListThree.add(5);
 myListThree.add(6);
 
 myListOne.head.child = myListTwo.head;
-myListTwo.head.next.child = myListThree.head;
+myListOne.head.next.child = myListThree.head;
 
 console.log(myListOne);
 
