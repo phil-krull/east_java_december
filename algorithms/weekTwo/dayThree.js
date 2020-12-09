@@ -67,6 +67,21 @@ console.log(myListOne);
 
 function flatten(list) {
     // code here
+    let runner = list.head;
+    while(runner) {
+        if(runner.child != null) {
+            let next = runner.next;
+            let runnerTwo = runner.child;
+            while(runnerTwo.next) {
+                runnerTwo = runnerTwo.next;
+            }
+            runner.next = runner.child;
+            runnerTwo.next = next;
+            runner = next;
+        } else {
+            runner = runner.next;
+        }
+    }
 }
 
 flatten(myListOne);
