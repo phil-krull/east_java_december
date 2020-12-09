@@ -60,8 +60,34 @@ class SLL {
 }
 
 function kthLargest(list, k) {
-    // code here
-}
+    if(!list.head){
+        return false;
+    }
+    if(!k){
+        return false;
+    }
+    var runner = list.head;
+    var follower = false;
+    while(runner){
+        if(!k && !follower){
+            console.log('setting follower');
+            follower = list.head;
+        }
+        if(follower){
+            follower = follower.next;
+        }
+        runner = runner.next;
+        k--;
+    }
+    if(follower){
+        follower = follower.value;
+    }
+    if(!follower && k === 0){
+        follower = this.head.value;
+    }
+    return follower;
+};
+
 
 const myList = new SLL();
 myList.add(1);
