@@ -80,10 +80,10 @@ function kthLargest(list, k) {
         k--;
     }
     if(follower){
-        follower = follower.value;
+        follower = follower.val;
     }
     if(!follower && k === 0){
-        follower = this.head.value;
+        follower = this.head.val;
     }
     return follower;
 };
@@ -98,5 +98,5 @@ myList.add(5);
 myList.add(6);
 
 let result = kthLargest(myList, 4);
-console.log(result);
+console.log('result is: ', result);
 // should log 3
