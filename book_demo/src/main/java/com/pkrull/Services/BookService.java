@@ -33,4 +33,8 @@ public class BookService {
             return null;
         }
     }
+    // delete book
+    public void deleteBook(Long id) {
+    	bookRepository.deleteById(id);
+    }
 }

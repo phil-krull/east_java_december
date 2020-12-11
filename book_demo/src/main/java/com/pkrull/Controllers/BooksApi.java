@@ -56,4 +56,10 @@ public class BooksApi {
     public String newBook(@ModelAttribute("book") Book book) {
         return "new.jsp";
     }
+    
+    @RequestMapping(value="/books/{id}", method=RequestMethod.DELETE)
+    public String deleteBook(@PathVariable("id") Long id) {
+    	bookService.deleteBook(id);
+    	return "redirect:/books";
+    }
 }
