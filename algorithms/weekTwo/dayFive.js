@@ -25,25 +25,24 @@ class DLList {
             this.head = newNode;
         }
     }
-    removeFront() {
-        // removes and return the first node of list
+    printValues() {
+        let runner = this.head;
+        while(runner != null) {
+            console.log(runner.val);
+            runner = runner.next;
+        }
     }
-    addBack(val) {
-        // add node to end of list
-    }
-    removeBack() {
-        // removes and return the last node of list
-    }
-    front() {
-        // returns val of the first node
-    }
-    back() {
-        // returns val of the last node
-    }
-    contains(val) {
-        // returns a boolean on whether or not the given value is in the list
-    }
-    size() {
-        // returns the # of nodes in the list
+    reverse() {
+        // code here
     }
 }
+
+const myDList = new DLList();
+myDList.addFront(1);
+myDList.addFront(2);
+myDList.addFront(3);
+myDList.addFront(4);
+myDList.addFront(5);
+console.log(myDList.printValues());
+myDList.reverse();
+console.log(myDList.printValues());
