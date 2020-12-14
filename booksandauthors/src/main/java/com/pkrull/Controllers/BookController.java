@@ -15,11 +15,9 @@ import com.pkrull.Services.BookService;
 @Controller
 public class BookController {
 	
-	private final AuthorService authorService;
 	private final BookService bookService;
 	
-	public BookController(AuthorService aService, BookService bService) {
-		this.authorService = aService;
+	public BookController(BookService bService) {
 		this.bookService = bService;
 	}
 	
@@ -28,8 +26,6 @@ public class BookController {
 		if(result.hasErrors()) {
 			return "index.jsp";
 		} else {
-			// first get the author
-			// Author author = authorService.findAuthor(book.author);
 			bookService.addBook(book);
 			return "redirect:/";
 			
