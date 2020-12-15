@@ -1,5 +1,5 @@
-Binary Search Trees
------------------------------------------------------------------
+// Binary Search Trees
+// -----------------------------------------------------------------
 class BSTNode {
     constructor(value) {
         this.val = value;
