@@ -56,6 +56,7 @@ const treeTwo = new BST();
 treeTwo.add(30);
 treeTwo.add(20);
 treeTwo.add(10);
+treeTwo.add(5);
 treeTwo.add(60);
 treeTwo.add(40);
 treeTwo.add(70);
