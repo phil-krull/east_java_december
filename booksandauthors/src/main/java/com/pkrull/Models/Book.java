@@ -22,7 +22,7 @@ public class Book {
     private Long id;
 	
     @Size(min = 5, max = 200)
-    private String Title;
+    private String title;
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="author_id")
@@ -46,11 +46,11 @@ public class Book {
 	}
 
 	public String getTitle() {
-		return Title;
+		return title;
 	}
 
 	public void setTitle(String title) {
-		Title = title;
+		this.title = title;
 	}
 
 	public Author getAuthor() {

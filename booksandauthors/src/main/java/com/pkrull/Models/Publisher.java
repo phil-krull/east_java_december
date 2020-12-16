@@ -21,7 +21,7 @@ public class Publisher {
     private Long id;
 	
     @Size(min = 5, max = 200)
-    private String Name;
+    private String name;
     
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
@@ -43,11 +43,11 @@ public class Publisher {
 	}
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 
 	public List<Book> getBooks() {

@@ -60,6 +60,7 @@
     	<form:label path="author">Author:</form:label>
         <form:errors path="author"/>
         <form:select path="author">
+        	<option selected disabled>Choose author</option>
 		    <form:options items="${authors}" itemValue="id" itemLabel="name"/>
 		</form:select>
     </p>  

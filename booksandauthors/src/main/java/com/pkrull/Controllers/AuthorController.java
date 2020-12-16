@@ -40,8 +40,11 @@ public class AuthorController {
 	@PostMapping("/authors")
 	// or
 	// @RequestMapping(value="/books", method=RequestMethod.POST)
-	public String create(@Valid @ModelAttribute("author") Author author, BindingResult result) {
+	public String create(@Valid @ModelAttribute("author") Author author, BindingResult result, Model model, @ModelAttribute("book") Book book, @ModelAttribute("publisher") Publisher publisher, @ModelAttribute("publications") Publication publication) {
 		if (result.hasErrors()) {
+			model.addAttribute("authors", authorService.allAuthors());
+			model.addAttribute("books", bookService.allBooks());
+			model.addAttribute("publishers", publisherService.allPublishers());
             return "index.jsp";
         } else {
             authorService.createAuthor(author);

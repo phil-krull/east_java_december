@@ -37,13 +37,8 @@ class BST {
             }
         }
     }
-    size(node=this.root) {
-        // return the # of nodes in the list
-        if(node == null) return 0;
-        return this.size(node.left) + this.size(node.right) + 1;
-    }
-    height(node=this.root) {
-        // return the # of rows of the tree
+    isBalanced(){
+        // returns a boolean on whether or not the tree is balanced
     }
 }
 
@@ -55,7 +50,14 @@ myTree.add(75);
 myTree.add(10);
 myTree.add(60);
 myTree.add(80);
-console.log(myTree.size());
-// log 7
-console.log(myTree.height());
-// log 3
+console.log(myTree.isBalanced())
+// true
+const treeTwo = new BST();
+treeTwo.add(30);
+treeTwo.add(20);
+treeTwo.add(10);
+treeTwo.add(60);
+treeTwo.add(40);
+treeTwo.add(70);
+console.log(treeTwo.isBalanced())
+// false
