@@ -70,5 +70,6 @@ treeTwo.add(70);
 const newBSTNode = new BSTNode(55);
 treeTwo.root.left.right = newBSTNode;
 console.log(treeTwo.inOrderArray());
+// [5, 10, 20, 55, 30, 40, 60, 70]
 console.log(isValid(treeTwo));
 // false
