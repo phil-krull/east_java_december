@@ -42,8 +42,11 @@ class BST {
     }
 }
 
-function isValid(tree) {
+function isValid(tree, node = tree.root, min = -Infinity, max = Infinity) {
     // returns a boolean if the given tree is a valid binary search tree
+    if(node == null) return true;
+    if(node.val < min || node.val > max) return false;
+    return isValid(tree, node.left, min, node.val) && isValid(tree, node.right, node.val, max);
 }
 
 const myTree = new BST();
