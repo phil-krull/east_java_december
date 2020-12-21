@@ -1,6 +1,9 @@
-function hashMap(cap) {
-    this.capacity = cap;
-    this.table = [];
+class hashMap {
+
+    constructor(cap) {
+        this.capacity = cap;
+        this.table = [];
+    }
 
     add(key, val) {
         // Create an add(key, val) method on hashMap to add a new key and value to the map. This entails hashing key, mod’ing it into the size of your array, and placing the value there.
@@ -24,7 +27,27 @@ String.prototype.hashCode = function() {
     return hash;
 }
 
-let myString = "Today";
+let myString = "today";
 let myHashCode = myString.hashCode();
 
 console.log('myHashCode', myHashCode);
+
+
+
+const myHash = new hashMap(10);
+
+myHash.add("today", "Monday");
+// myHash.table = [
+//     [],
+//     [],
+//     [],
+//     [],
+//     [],
+//     [["today", "Monday"]],
+//     [],
+//     [],
+//     [],
+//     []
+// ]
+console.log(myHash.find("today"));
+// Monday
