@@ -7,10 +7,21 @@ class hashMap {
 
     add(key, val) {
         // Create an add(key, val) method on hashMap to add a new key and value to the map. This entails hashing key, mod’ing it into the size of your array, and placing the value there.
+        let location = key.hashCode();
+        console.log('location', location % this.capacity);
+        console.log('location', location % 5000);
+        this.table[location % this.capacity] = [key, val];
     }
 
     find(key) {
         // Create a find(key) method to return value for given key. If key is not found, return null.
+        let location = key.hashCode();
+        let position = location % this.capacity;
+        if (this.table[position] && this.table[position][0] == key) {
+            return this.table[position][1];
+        } else {
+            return null;
+        }
     }
 }
 
@@ -50,4 +61,5 @@ myHash.add("today", "Monday");
 //     []
 // ]
 console.log(myHash.find("today"));
+console.log(myHash.find("date"));
 // Monday
